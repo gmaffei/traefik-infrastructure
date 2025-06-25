@@ -1,0 +1,6 @@
+.env
+acme.json
+*.log
+.DS_Store
+.idea/
+.vscode/

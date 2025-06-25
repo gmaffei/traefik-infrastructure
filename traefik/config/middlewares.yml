@@ -1,0 +1,26 @@
+http:
+  middlewares:
+    default-headers:
+      headers:
+        frameDeny: true
+        sslRedirect: true
+        browserXssFilter: true
+        contentTypeNosniff: true
+        forceSTSHeader: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 15552000
+        customFrameOptionsValue: SAMEORIGIN
+        customRequestHeaders:
+          X-Forwarded-Proto: https
+
+    rate-limit:
+      rateLimit:
+        average: 100
+        burst: 50
+
+    secured:
+      chain:
+        middlewares:
+          - default-headers
+          - rate-limit

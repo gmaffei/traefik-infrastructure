@@ -38,3 +38,10 @@ certificatesResolvers:
         # disablePropagationCheck: true
         # Delay before checking DNS propagation. Useful for slow DNS providers.
         # delayBeforeCheck: 0
+
+  letsencrypt_http:
+    acme:
+      email: ${ACME_EMAIL}
+      storage: acme.json
+      httpChallenge:
+        entryPoint: http
